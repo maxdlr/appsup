@@ -1,0 +1,8 @@
+name: Get User
+url: http://localhost:9090/users
+headers:
+- name: Content-Type
+  value: application/json
+params:
+- name: id
+  value: '1'

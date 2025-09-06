@@ -1,0 +1,15 @@
+node_modules
+.env
+.env.sandbox
+.env.prod
+.DS_Store
+src/api/local/
+dev-config.json
+dist
+
+# local certs
+/certs
+
+# vscode
+.vscode/settings.json
+
