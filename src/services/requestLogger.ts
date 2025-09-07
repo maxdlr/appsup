@@ -10,7 +10,8 @@ export const requestLogger = (
   console.log(
     chalk.bgBlue.white.bold(`\n[REQ] ${req.method} ${req.originalUrl}`)
   );
-  // console.log(chalk.cyan('Params:'), req.params);
+  // @ts-ignore
+  console.log(chalk.cyan('Params:'), req.params);
   console.log(chalk.cyan('Query:'), req.query);
   console.log(chalk.cyan('Body:'), req.body);
 

@@ -1,6 +1,9 @@
-import { User } from '@/entity/User';
+import { Student } from '@/entity/Student';
+import { Teacher } from '@/entity/Teacher';
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
+
+export const Entities = [Student, Teacher];
 
 export const AppDataSource = new DataSource({
   type: 'mariadb',
@@ -11,7 +14,7 @@ export const AppDataSource = new DataSource({
   database: process.env.APP_NAME,
   synchronize: true,
   logging: false,
-  entities: [User],
+  entities: Entities,
   migrations: [],
   subscribers: [],
 });

@@ -7,20 +7,16 @@ import registerGlobals from '@/services/registerGlobals';
 registerGlobals();
 
 import routes from '@/routes';
-import chalk from 'chalk';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import express, { NextFunction, Request, Response } from 'express';
 // import setCors from './src/services/cors';
 import setCors from '@/services/cors';
 import { AppDataSource } from '@/services/database/datasource';
+import { requestLogger } from '@/services/requestLogger';
 import serviceErrorHandler from '@/services/serviceErrorHandlers';
 import wrapRoutesHandlers from '@/services/wrapRoutesHandlers';
 import printStartupInfo from '@/utils/printStartupInfo';
-import { log } from 'console';
-import { requestLogger } from '@/services/requestLogger';
-import { User } from '@/entity/User';
-import { userRepository } from '@/repository/userRepository';
 
 /**
  * ======================
@@ -114,7 +110,7 @@ AppDataSource.initialize()
     // user.firstname = 'Max';
     // user.lastname = 'Dlr';
     //
-    // userRepository.save(user);
+    // studentRepository.save(user);
   })
   .catch((error) => console.log(error));
 

@@ -1,3 +1,5 @@
+import { Response } from 'express';
+
 export {};
 
 declare global {
@@ -8,6 +10,21 @@ declare global {
   interface TCrudError extends Error {
     status: number;
   }
+
+  interface TApiResponse {
+    status: number;
+    message: string;
+    body?: any;
+    count?: number;
+    error?: any;
+  }
+
+  var ApiResponse: {
+    (
+      res: Response,
+      apiResponse: TApiResponse
+    ): Response<any, Record<string, any>>;
+  };
 
   var ApiError: {
     (status: number, message?: string): TApiError;

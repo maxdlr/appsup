@@ -1,3 +1,4 @@
+import { Entities } from '@/services/database/datasource';
 import { getMetadataArgsStorage } from 'typeorm';
 
 type RequestObject<T> = Partial<Record<keyof T, any>>;
@@ -7,17 +8,7 @@ export type CreateRequest<T> = Omit<RequestObject<T>, 'id'>;
 export type UpdateRequest<T> = RequestObject<T>;
 export type DeleteRequest = { id: number };
 
-const getEntityClassNames = () => {
-  return getMetadataArgsStorage().generations.map((g) =>
-    g.target
-      .toString()
-      .replace('class', '')
-      .replace('entity', '')
-      .replace('{', '')
-      .replace('}', '')
-      .trim()
-  );
-};
+const getEntityClassNames = () => Entities.map((e) => e.name);
 
 export function validateRequest<T>(
   obj: any,

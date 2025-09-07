@@ -1,4 +1,4 @@
-name: Get User
+name: Get Teacher
 url: http://localhost:9090/users/2
 headers:
 - name: Content-Type

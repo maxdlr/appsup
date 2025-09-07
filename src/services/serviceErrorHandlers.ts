@@ -11,21 +11,20 @@ const serviceErrorHandler = (
   // Log the error
   console.error(`[ERROR] ${req.method} ${req.originalUrl}:`, err);
 
-  // Determine status code
-  const status = (err as any)?.status || 500;
-
   // Send JSON response
-  res.status(status).json({
-    api: process.env.APP_NAME,
+  return ApiResponse(res, {
+    status: (err as any)?.status || 500,
     message: err?.message || 'Something went wrong',
-    endpoint: req.originalUrl,
-    stack:
-      process.env.NODE_ENV !== 'production'
-        ? process.env.LOG_LEVEL === 'debug'
-          ? err?.stack
-          : undefined
-        : undefined,
-    traceId: req.headers['x-request-id'] || null,
+    error: {
+      endpoint: req.originalUrl,
+      stack:
+        process.env.NODE_ENV !== 'production'
+          ? process.env.LOG_LEVEL === 'debug'
+            ? err?.stack
+            : undefined
+          : undefined,
+      traceId: req.headers['x-request-id'] || null,
+    },
   });
 };
 

@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import userRoutes from './api/users/routes/index';
+import studentRoutes from './api/students/routes/index';
+import teacherRoutes from './api/teachers/routes/index';
 
 const router = Router();
 
-router.use('/users', userRoutes.v1);
+router.use('/students', studentRoutes.v1);
+router.use('/teachers', teacherRoutes.v1);
 
 export default router;
