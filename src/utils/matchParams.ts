@@ -61,5 +61,9 @@ function getEntityKeys<T>(className: string): (keyof T)[] {
     .columns.filter((col) => col.target.toString().includes(className))
     .map((col) => col.propertyName);
 
-  return columns as (keyof T)[];
+  const abstractColumns = getMetadataArgsStorage()
+    .columns.filter((col) => col.target.toString().includes('AbstractEntity'))
+    .map((col) => col.propertyName);
+
+  return [...columns, ...abstractColumns] as (keyof T)[];
 }

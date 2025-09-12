@@ -4,5 +4,5 @@ import { Student } from './Student';
 @Entity()
 export class Teacher extends Student {
   @Column()
-  status!: 'active' | 'inactive';
+  status: 'active' | 'inactive' = 'inactive';
 }

@@ -1,0 +1,13 @@
+name: Create Teacher
+method: POST
+url: http://localhost:9090/teachers
+body:
+  content: |-
+    {
+      "firstname": "Maxou",
+      "lastname": "Dlrou"
+    }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json

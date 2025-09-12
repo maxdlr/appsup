@@ -1,5 +1,5 @@
 name: Get Teacher
-url: http://localhost:9090/users/2
+url: http://localhost:9090/teachers/1
 headers:
 - name: Content-Type
   value: application/json
