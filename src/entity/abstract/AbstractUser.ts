@@ -7,8 +7,8 @@ export abstract class AbstractUser extends AbstractEntity {
 
   @Column()
   lastname!: string;
-}
 
-export const UserCreateRequestKeys = ['firstname', 'lastname'];
-export const UserGetRequestKeys = ['id'];
-export const UserDeleteRequestKeys = ['id'];
+  public static CreateRequestKeys: string[] = ['firstname', 'lastname'];
+  public static GetRequestKeys: string[] = ['id'];
+  public static DeleteRequestKeys: string[] = ['id'];
+}

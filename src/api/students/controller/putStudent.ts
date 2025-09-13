@@ -6,14 +6,13 @@ import {
 } from '@/utils/matchParams';
 import { Request, Response } from 'express';
 import StudentService from '../services/StudentService';
-import { UserGetRequestKeys } from '@/entity/AbstractUser';
 
 // @ts-ignore
 const putStudent = async ({ body, params }: Request, res: Response) => {
   const putStudentParams = validateRequest<GetRequest<Student>>(
     params,
     'Student',
-    UserGetRequestKeys
+    Student.GetRequestKeys
   );
   const putStudentBody = validateRequest<UpdateRequest<Student>>(
     body,

@@ -1,5 +1,5 @@
 import { Student } from '@/entity/Student';
-import { studentRepository } from '@/repository/studentRepository';
+import { StudentRepository } from '@/repository/StudentRepository';
 import { criteriaToString } from '@/utils/criteriaToString';
 import { FindOptionsWhere } from 'typeorm';
 
@@ -8,7 +8,7 @@ const getStudent = async (criteria: FindOptionsWhere<Student>) => {
     throw CrudError(500, 'Criteria needed to get a student');
   }
 
-  const student = await studentRepository.findOneBy(criteria);
+  const student = await StudentRepository.findOneBy(criteria);
 
   if (!student) {
     throw CrudError(

@@ -1,14 +1,14 @@
 import { DeleteRequest, validateRequest } from '@/utils/matchParams';
 import { Request, Response } from 'express';
 import TeacherService from '../services/TeacherService';
-import { UserDeleteRequestKeys } from '@/entity/AbstractUser';
+import { Teacher } from '@/entity/Teacher';
 
 // @ts-ignore
 const deleteTeacher = async ({ params }: Request, res: Response) => {
   const deleteTeacherParams = validateRequest<DeleteRequest>(
     params,
     'Teacher',
-    UserDeleteRequestKeys
+    Teacher.DeleteRequestKeys
   );
 
   const teacher = await TeacherService.one(deleteTeacherParams);

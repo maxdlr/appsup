@@ -5,7 +5,6 @@ import {
 } from '@/utils/matchParams';
 import { Request, Response } from 'express';
 import TeacherService from '../services/TeacherService';
-import { UserGetRequestKeys } from '@/entity/AbstractUser';
 import { Teacher } from '@/entity/Teacher';
 
 // @ts-ignore
@@ -13,7 +12,7 @@ const putTeacher = async ({ body, params }: Request, res: Response) => {
   const putTeacherParams = validateRequest<GetRequest<Teacher>>(
     params,
     'Teacher',
-    UserGetRequestKeys
+    Teacher.GetRequestKeys
   );
   const putTeacherBody = validateRequest<UpdateRequest<Teacher>>(
     body,

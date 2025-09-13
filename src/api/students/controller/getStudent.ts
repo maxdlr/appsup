@@ -1,15 +1,14 @@
 import { Student } from '@/entity/Student';
 import { GetRequest, validateRequest } from '@/utils/matchParams';
-import StudentService from '../services/StudentService';
 import { Request, Response } from 'express';
-import { UserGetRequestKeys } from '@/entity/AbstractUser';
+import StudentService from '../services/StudentService';
 
 // @ts-ignore
 const getStudent = async ({ params }: Request, res: Response) => {
   const getStudentRequest = validateRequest<GetRequest<Student>>(
     params,
     'Student',
-    UserGetRequestKeys
+    Student.GetRequestKeys
   );
   const student = await StudentService.one(getStudentRequest);
   return ApiResponse(res, {

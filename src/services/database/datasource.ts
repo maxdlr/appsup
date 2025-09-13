@@ -1,9 +1,10 @@
+import { Lecture } from '@/entity/Lecture';
 import { Student } from '@/entity/Student';
 import { Teacher } from '@/entity/Teacher';
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 
-export const Entities = [Student, Teacher];
+export const Entities = [Student, Teacher, Lecture];
 
 export const AppDataSource = new DataSource({
   type: 'mariadb',

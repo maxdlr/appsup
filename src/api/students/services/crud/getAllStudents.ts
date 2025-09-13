@@ -1,12 +1,12 @@
 import { Student } from '@/entity/Student';
-import { studentRepository } from '@/repository/studentRepository';
+import { StudentRepository } from '@/repository/StudentRepository';
 import { FindOptionsWhere } from 'typeorm';
 
 const getAllStudents = async (criteria?: FindOptionsWhere<Student>) => {
   if (!criteria) {
-    return await studentRepository.find();
+    return await StudentRepository.find();
   }
-  return await studentRepository.findBy(criteria);
+  return await StudentRepository.findBy(criteria);
 };
 
 export default getAllStudents;

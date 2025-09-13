@@ -1,14 +1,13 @@
 import { CreateRequest, validateRequest } from '@/utils/matchParams';
 import { Request, Response } from 'express';
 import TeacherService from '../services/TeacherService';
-import { UserCreateRequestKeys } from '@/entity/AbstractUser';
 import { Teacher } from '@/entity/Teacher';
 
 const postTeacher = async ({ body }: Request, res: Response) => {
   const createTeacherRequest = validateRequest<CreateRequest<Teacher>>(
     body,
     'Teacher',
-    UserCreateRequestKeys
+    Teacher.CreateRequestKeys
   );
 
   const teacher = new Teacher();
