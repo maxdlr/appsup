@@ -1,0 +1,6 @@
+name: Delete Tnstructor
+method: DELETE
+url: http://localhost:9090/lectures/1
+headers:
+  - name: content-type
+    value: application/json

@@ -1,0 +1,5 @@
+name: Get Tnstructor
+url: http://localhost:9090/instructors/1
+headers:
+- name: Content-Type
+  value: application/json

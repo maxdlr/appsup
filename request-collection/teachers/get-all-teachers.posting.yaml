@@ -1,5 +1,0 @@
-name: Get All Teachers
-url: http://localhost:9090/teachers
-headers:
-- name: Content-Type
-  value: application/json

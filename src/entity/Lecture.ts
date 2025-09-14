@@ -1,9 +1,9 @@
-import { Entity, ManyToOne } from 'typeorm';
-import { AbstractEvent } from './abstract/AbstractEvent';
-import { Teacher } from './Teacher';
+import { ChildEntity, ManyToOne } from 'typeorm';
+import { Event } from './abstract/Event';
+import { Instructor } from './Instructor';
 
-@Entity()
-export class Lecture extends AbstractEvent {
-  @ManyToOne(() => Teacher, (teacher) => teacher.lectures)
-  author!: Teacher;
+@ChildEntity()
+export class Lecture extends Event {
+  @ManyToOne(() => Instructor, (instructor) => instructor.lectures)
+  author!: Instructor;
 }

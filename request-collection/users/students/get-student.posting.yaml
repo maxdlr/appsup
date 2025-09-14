@@ -1,0 +1,5 @@
+name: Get Student
+url: http://localhost:9090/students/2
+headers:
+  - name: Content-Type
+    value: application/json
