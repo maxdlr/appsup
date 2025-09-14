@@ -1,0 +1,12 @@
+name: Put Teacher
+method: PUT
+url: http://localhost:9090/teachers/1
+body:
+  content: |-
+    {
+      "lastname": "edited lastname"
+    }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json

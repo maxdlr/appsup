@@ -21,12 +21,12 @@ const putLecture = async ({ body, params }: Request, res: Response) => {
 
   await LectureService.update(putLectureParams, putLectureBody);
 
-  const lecture = await LectureService.one(putLectureParams);
+  const updated = await LectureService.one(putLectureParams);
 
   return ApiResponse(res, {
     status: 200,
     message: 'Lecture successfully updated.',
-    body: lecture,
+    body: updated,
   });
 };
 

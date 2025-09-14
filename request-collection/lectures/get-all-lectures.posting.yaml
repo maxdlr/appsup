@@ -1,0 +1,5 @@
+name: Get All lectures
+url: http://localhost:9090/lectures
+headers:
+  - name: Content-Type
+    value: application/json

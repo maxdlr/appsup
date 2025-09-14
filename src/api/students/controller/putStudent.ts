@@ -21,12 +21,12 @@ const putStudent = async ({ body, params }: Request, res: Response) => {
 
   await StudentService.update(putStudentParams, putStudentBody);
 
-  const student = await StudentService.one(putStudentParams);
+  const updated = await StudentService.one(putStudentParams);
 
   return ApiResponse(res, {
     status: 200,
     message: 'Student successfully updated.',
-    body: student,
+    body: updated,
   });
 };
 

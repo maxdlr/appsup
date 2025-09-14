@@ -1,0 +1,15 @@
+name: Create lecture
+method: POST
+url: http://localhost:9090/lectures
+body:
+  content: |-
+    {
+      "name": "Maxou",
+      "description": "This the description of the Maxou event",
+      "startDate": "2025-09-14T14:00:15.889Z",
+      "endDate": "2025-09-14T16:00:15.889Z"
+    }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json

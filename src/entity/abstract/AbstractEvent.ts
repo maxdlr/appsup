@@ -5,8 +5,8 @@ export abstract class AbstractEvent extends AbstractEntity {
   @Column()
   name!: string;
 
-  @Column()
-  description: string = '';
+  @Column({ default: '' })
+  description!: string;
 
   @Column()
   startDate!: Date;
@@ -14,13 +14,7 @@ export abstract class AbstractEvent extends AbstractEntity {
   @Column()
   endDate!: Date;
 
-  public static CreateRequestKeys: string[] = [
-    'name',
-    'description',
-    'startDate',
-    'endDate',
-  ];
-
+  public static CreateRequestKeys: string[] = ['name', 'startDate', 'endDate'];
   public static GetRequestKeys: string[] = ['id'];
   public static DeleteRequestKeys: string[] = ['id'];
 }

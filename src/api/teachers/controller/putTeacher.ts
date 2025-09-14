@@ -21,12 +21,12 @@ const putTeacher = async ({ body, params }: Request, res: Response) => {
 
   await TeacherService.update(putTeacherParams, putTeacherBody);
 
-  const teacher = await TeacherService.one(putTeacherParams);
+  const updated = await TeacherService.one(putTeacherParams);
 
   return ApiResponse(res, {
     status: 200,
     message: 'Teacher successfully updated.',
-    body: teacher,
+    body: updated,
   });
 };
 

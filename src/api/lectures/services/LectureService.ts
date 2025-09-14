@@ -1,34 +1,34 @@
-import { Teacher } from '@/entity/Teacher';
+import { Lecture } from '@/entity/Lecture';
 import {
   CrudServiceMethods,
   GetMethods,
   MutateMethods,
 } from '@/types/crudTypes';
-import createTeacher from './crud/createTeacher';
-import getAllTeachers from './crud/getAllTeachers';
-import getTeacher from './crud/getTeacher';
-import updateTeacher from './crud/updateTeacher';
+import createLecture from './crud/createLecture';
+import getAllLectures from './crud/getAllLectures';
+import getLecture from './crud/getLecture';
+import updateLecture from './crud/updateLecture';
 import { CreateRequest } from '@/utils/matchParams';
-import softDeleteTeacher from './crud/softDeleteTeacher';
+import softDeleteLecture from './crud/softDeleteLecture';
 
-const mutateTeachers = (): MutateMethods<Teacher> => {
+const mutateLectures = (): MutateMethods<Lecture> => {
   return {
-    create: (teacher: CreateRequest<Teacher>) => createTeacher(teacher),
-    update: (criteria, teacher) => updateTeacher(criteria, teacher),
-    delete: (criteria) => softDeleteTeacher(criteria),
+    create: (lecture: CreateRequest<Lecture>) => createLecture(lecture),
+    update: (criteria, lecture) => updateLecture(criteria, lecture),
+    delete: (criteria) => softDeleteLecture(criteria),
   };
 };
 
-const queryTeachers = (): GetMethods<Teacher> => {
+const queryLectures = (): GetMethods<Lecture> => {
   return {
-    all: async (criteria?) => await getAllTeachers(criteria),
-    one: async (criteria) => getTeacher(criteria),
+    all: async (criteria?) => await getAllLectures(criteria),
+    one: async (criteria) => getLecture(criteria),
   };
 };
 
-const TeacherService: CrudServiceMethods<Teacher> = {
-  ...queryTeachers(),
-  ...mutateTeachers(),
+const LectureService: CrudServiceMethods<Lecture> = {
+  ...queryLectures(),
+  ...mutateLectures(),
 };
 
-export default TeacherService;
+export default LectureService;

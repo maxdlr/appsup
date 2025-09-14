@@ -1,0 +1,12 @@
+name: Put lecture
+method: PUT
+url: http://localhost:9090/lectures/1
+body:
+  content: |-
+    {
+      "description": "edited description"
+    }
+  content_type: application/json
+headers:
+- name: content-type
+  value: application/json
