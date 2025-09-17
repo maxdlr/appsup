@@ -1,5 +1,5 @@
 import { ChildEntity, ManyToOne } from 'typeorm';
-import { Event } from './abstract/Event';
+import { Event } from './parent/Event';
 import { Instructor } from './Instructor';
 
 @ChildEntity()

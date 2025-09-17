@@ -1,9 +1,9 @@
-import { Column, Entity, OneToMany } from 'typeorm';
-import { AbstractUser } from './abstract/AbstractUser';
+import { ChildEntity, Column, OneToMany } from 'typeorm';
+import { User } from './parent/User';
 import { Lecture } from './Lecture';
 
-@Entity()
-export class Instructor extends AbstractUser {
+@ChildEntity()
+export class Instructor extends User {
   @Column()
   status: 'active' | 'inactive' = 'inactive';
 

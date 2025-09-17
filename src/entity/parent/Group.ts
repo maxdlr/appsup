@@ -1,7 +1,9 @@
-import { Column } from 'typeorm';
-import { AbstractEntity } from './AbstractEntity';
+import { Column, Entity, TableInheritance } from 'typeorm';
+import { AbstractEntity } from '../abstract/AbstractEntity';
 
-export abstract class AbstractGroup extends AbstractEntity {
+@Entity()
+@TableInheritance({ column: { type: 'varchar', name: 'type' } })
+export abstract class Group extends AbstractEntity {
   @Column()
   name!: string;
 

@@ -1,19 +1,6 @@
-import { Lecture } from '@/entity/Lecture';
-import { Student } from '@/entity/Student';
-import { Instructor } from '@/entity/Instructor';
 import 'reflect-metadata';
+import Entities from '@/entity/index';
 import { DataSource } from 'typeorm';
-import { StudentGroup } from '@/entity/StudentGroup';
-import { Participation } from '@/entity/Participation';
-import { Event } from '@/entity/abstract/Event';
-
-export const Entities = [
-  Student,
-  Instructor,
-  StudentGroup,
-  Participation,
-  Event,
-];
 
 export const AppDataSource = new DataSource({
   type: 'mariadb',

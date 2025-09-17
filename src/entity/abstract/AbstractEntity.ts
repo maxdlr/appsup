@@ -5,13 +5,13 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-export interface CrudKeys {
-  CreateRequestKeys: string[];
-  GetRequestKeys: string[];
-  DeleteRequestKeys: string[];
-}
+// export interface CrudKeys {
+//   CreateRequestKeys: string[];
+//   GetRequestKeys: string[];
+//   DeleteRequestKeys: string[];
+// }
 
-export abstract class AbstractEntity implements CrudKeys {
+export abstract class AbstractEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 
@@ -24,7 +24,7 @@ export abstract class AbstractEntity implements CrudKeys {
   @UpdateDateColumn()
   updatedAt?: Date;
 
-  CreateRequestKeys!: string[];
-  GetRequestKeys!: string[];
-  DeleteRequestKeys!: string[];
+  protected static CreateRequestKeys: string[];
+  protected static GetRequestKeys: string[];
+  protected static DeleteRequestKeys: string[];
 }
